@@ -12,12 +12,12 @@ void create_world(int p, int q, world_func func, void *arg) {
             }
             int x = p * CHUNK_SIZE + dx;
             int z = q * CHUNK_SIZE + dz;
-            float f = simplex2(x * 0.01, z * 0.01, 4, 0.5, 2);
+            float f = simplex2(x * 0.01, z * 0.01, 5, 0.1, 2);
             float g = simplex2(-x * 0.01, -z * 0.01, 2, 0.9, 2);
             int mh = g * 32 + 16;
             int h = f * mh;
             int w = 1;
-            int t = 12;
+            int t = 0;
             if (h <= t) {
                 h = t;
                 w = 2;

@@ -2,10 +2,10 @@
 #define _config_h_
 
 // app parameters
-#define DEBUG 0
+#define DEBUG 1
 #define FULLSCREEN 0
-#define WINDOW_WIDTH 1024
-#define WINDOW_HEIGHT 768
+#define WINDOW_WIDTH 1280
+#define WINDOW_HEIGHT 1024
 #define VSYNC 1
 #define SCROLL_THRESHOLD 0.1
 #define MAX_MESSAGES 4
@@ -16,9 +16,9 @@
 
 // rendering options
 #define SHOW_LIGHTS 1
-#define SHOW_PLANTS 1
-#define SHOW_CLOUDS 1
-#define SHOW_TREES 1
+#define SHOW_PLANTS 0
+#define SHOW_CLOUDS 0
+#define SHOW_TREES 0
 #define SHOW_ITEM 1
 #define SHOW_CROSSHAIRS 1
 #define SHOW_WIREFRAME 1
@@ -44,10 +44,10 @@
 #define CRAFT_KEY_SIGN '`'
 
 // advanced parameters
-#define CREATE_CHUNK_RADIUS 10
-#define RENDER_CHUNK_RADIUS 10
+#define CREATE_CHUNK_RADIUS 16
+#define RENDER_CHUNK_RADIUS 12
 #define RENDER_SIGN_RADIUS 4
-#define DELETE_CHUNK_RADIUS 14
+#define DELETE_CHUNK_RADIUS 20
 #define CHUNK_SIZE 32
 #define COMMIT_INTERVAL 5
 
