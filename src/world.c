@@ -17,7 +17,7 @@ void create_world(int p, int q, world_func func, void *arg) {
             int mh = g * 32 + 16;
             int h = f * mh;
             int w = 1;
-            int t = 12;
+            int t = 0;
             if (h <= t) {
                 h = t;
                 w = 2;
