@@ -1,26 +1,6 @@
 #include "config.h"
 #include "noise.h"
 #include "world.h"
-#include <math.h>
-
-float surf(int ix, int iy)
-{
-#define S	(1.0 / 20)
-	float x = S * ix;
-	float y = S * iy;
-	float r = sqrt(x*x + y*y);
-	int h;
-
-	h = 15 * (cos(x) + cos(y)) + 30;
-
-	if (h < 1)
-		h = 1;
-
-	if (h > 255)
-		h = 255;
-
-	return h;
-}
 
 void create_world(int p, int q, world_func func, void *arg) {
     int pad = 1;
@@ -32,7 +12,10 @@ void create_world(int p, int q, world_func func, void *arg) {
             }
             int x = p * CHUNK_SIZE + dx;
             int z = q * CHUNK_SIZE + dz;
-            int h = surf(x, z);
+            float f = simplex2(x * 0.01, z * 0.01, 4, 0.5, 2);
+            float g = simplex2(-x * 0.01, -z * 0.01, 2, 0.9, 2);
+            int mh = g * 32 + 16;
+            int h = f * mh;
             int w = 1;
             int t = 0;
             if (h <= t) {
